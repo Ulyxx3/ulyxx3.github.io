@@ -1,0 +1,242 @@
+.nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 28px; /* above status bar */
+  z-index: 100;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px 0;
+  background: linear-gradient(
+    to right,
+    rgba(3, 13, 26, 0.95) 0%,
+    rgba(3, 13, 26, 0.7) 80%,
+    rgba(3, 13, 26, 0) 100%
+  );
+  backdrop-filter: blur(2px);
+  border-right: 1px solid rgba(0, 161, 241, 0.12);
+}
+
+/* ─── SIDE LABEL ─────────────────────────────────────────────────────────── */
+.sideLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 20px 32px 20px;
+  border-bottom: 1px solid rgba(0, 161, 241, 0.2);
+  margin-bottom: 24px;
+}
+
+.sideLabelText {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 0.12em;
+  color: var(--p3-blue);
+  text-shadow: 0 0 20px var(--p3-blue-glow);
+}
+
+.sideLabelSub {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: rgba(0, 161, 241, 0.5);
+  text-transform: uppercase;
+}
+
+/* ─── LIST ───────────────────────────────────────────────────────────────── */
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.listItem {
+  position: relative;
+}
+
+/* ─── LINK ───────────────────────────────────────────────────────────────── */
+.link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px 10px 16px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s var(--ease-smooth);
+  cursor: pointer;
+}
+
+.link:hover {
+  background: rgba(0, 161, 241, 0.06);
+}
+
+.link:hover .linkLabel {
+  color: var(--p3-blue);
+  text-shadow: 0 0 12px var(--p3-blue-glow);
+}
+
+/* Active state */
+.link.active .linkLabel {
+  color: var(--p3-blue);
+  text-shadow: 0 0 16px var(--p3-blue-glow);
+}
+
+.link.active .linkIndex {
+  color: var(--p3-blue);
+}
+
+.link.active .linkSub {
+  color: rgba(0, 161, 241, 0.7);
+}
+
+/* ─── INDICATOR (framer motion layoutId element) ─────────────────────────── */
+.indicator {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 161, 241, 0.18) 0%,
+    rgba(0, 161, 241, 0.04) 100%
+  );
+  clip-path: polygon(0 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+  pointer-events: none;
+}
+
+/* ─── ACTIVE BAR ─────────────────────────────────────────────────────────── */
+.activeBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--p3-blue);
+  transform-origin: left;
+  box-shadow: 0 0 10px var(--p3-blue-glow);
+}
+
+/* ─── INDEX NUMBER ───────────────────────────────────────────────────────── */
+.linkIndex {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: rgba(240, 240, 240, 0.25);
+  min-width: 20px;
+  transition: color 0.2s;
+}
+
+/* ─── LINK CONTENT ───────────────────────────────────────────────────────── */
+.linkContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.linkLabel {
+  font-family: var(--font-display);
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  color: var(--p3-white);
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.linkSub {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: rgba(240, 240, 240, 0.35);
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+/* ─── KEY HINT ───────────────────────────────────────────────────────────── */
+.keyHint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 20px 0 20px;
+  border-top: 1px solid rgba(0, 161, 241, 0.12);
+  margin-top: 16px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: rgba(240, 240, 240, 0.3);
+}
+
+.key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(0, 161, 241, 0.3);
+  border-radius: 3px;
+  font-size: 9px;
+  font-family: var(--font-body);
+  color: rgba(0, 161, 241, 0.6);
+  background: rgba(0, 161, 241, 0.05);
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav {
+    width: 100%;
+    height: auto;
+    top: auto;
+    bottom: 28px;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    background: rgba(3, 13, 26, 0.96);
+    border-right: none;
+    border-top: 1px solid rgba(0, 161, 241, 0.2);
+    backdrop-filter: blur(12px);
+  }
+
+  .sideLabel,
+  .keyHint {
+    display: none;
+  }
+
+  .list {
+    flex-direction: row;
+    gap: 0;
+    width: 100%;
+  }
+
+  .link {
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 8px 4px;
+    text-align: center;
+  }
+
+  .linkIndex {
+    display: none;
+  }
+
+  .linkSub {
+    display: none;
+  }
+
+  .linkLabel {
+    font-size: 11px;
+  }
+
+  .indicator {
+    clip-path: none;
+  }
+
+  .activeBar {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: auto;
+    width: auto;
+    height: 2px;
+  }
+}

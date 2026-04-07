@@ -1,0 +1,218 @@
+.wrapper {
+  min-height: 100vh;
+  padding: 52px 48px 60px 40px;
+}
+
+.pageHeader {
+  margin-bottom: 32px;
+}
+
+.pageTag {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: rgba(0, 161, 241, 0.55);
+  font-family: var(--font-display);
+  margin-bottom: 8px;
+}
+
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 48px);
+  letter-spacing: 0.1em;
+  color: var(--p3-white);
+  margin-bottom: 12px;
+}
+
+.titleUnderline {
+  width: 80px;
+  height: 3px;
+  background: var(--p3-blue);
+  box-shadow: 0 0 16px var(--p3-blue-glow);
+  margin-bottom: 16px;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+}
+
+.pageDesc {
+  font-size: 13px;
+  color: rgba(240, 240, 240, 0.45);
+}
+
+.code {
+  background: rgba(0, 161, 241, 0.1);
+  border: 1px solid rgba(0, 161, 241, 0.25);
+  border-radius: 3px;
+  padding: 1px 6px;
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--p3-blue);
+}
+
+/* ─── LEGEND ─────────────────────────────────────────────────────────────── */
+.legend {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.legendItem {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  padding: 4px 12px;
+  border: 1px solid;
+  clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+  font-family: var(--font-display);
+}
+
+/* ─── GALLERY GRID ──────────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ─── ART CARD ──────────────────────────────────────────────────────────── */
+.artCard {
+  position: relative;
+  background: rgba(5, 15, 32, 0.75);
+  border: 1px solid rgba(var(--accent, 0, 161, 241), 0.15);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  overflow: hidden;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Thumbnail */
+.thumb {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: rgba(0, 161, 241, 0.04);
+}
+
+.thumbImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease-smooth);
+}
+
+.artCard:hover .thumbImg {
+  transform: scale(1.05);
+}
+
+.thumbPlaceholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 30, 60, 0.8), rgba(0, 10, 30, 0.9));
+}
+
+.thumbIcon {
+  font-size: 36px;
+  color: rgba(0, 161, 241, 0.2);
+}
+
+/* Cut-in hover overlay */
+.cutInOverlay {
+  position: absolute;
+  inset: 0;
+  border: 2px solid;
+  background: rgba(0, 0, 0, 0.12);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Category badge */
+.categoryBadge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  font-family: var(--font-display);
+  color: #000;
+  padding: 3px 10px;
+  clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
+  z-index: 4;
+}
+
+/* Info */
+.info {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.artTitle {
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  color: var(--p3-white);
+}
+
+.artDesc {
+  font-size: 12px;
+  color: rgba(240, 240, 240, 0.5);
+  line-height: 1.5;
+}
+
+/* Glow border */
+.cardGlow {
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  pointer-events: none;
+}
+
+/* Add card */
+.addCard {
+  border: 1px dashed rgba(0, 161, 241, 0.2);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 40px 20px;
+  opacity: 0.4;
+  transition: opacity 0.2s;
+  background: rgba(0, 161, 241, 0.02);
+  aspect-ratio: unset;
+  min-height: 200px;
+}
+
+.addCard:hover {
+  opacity: 0.7;
+}
+
+.addIcon {
+  font-size: 28px;
+  color: var(--p3-blue);
+}
+
+.addLabel {
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  color: var(--p3-blue);
+}
+
+.addHint {
+  font-size: 11px;
+  font-family: monospace;
+  color: rgba(0, 161, 241, 0.5);
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────────────────────────*/
+@media (max-width: 768px) {
+  .wrapper { padding: 36px 20px; }
+  .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+}
