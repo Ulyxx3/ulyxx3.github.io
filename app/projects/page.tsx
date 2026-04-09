@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
+import { FaGithub } from "react-icons/fa6";
 import { projects } from "@/data/projects";
 import styles from "./page.module.css";
 
@@ -118,6 +119,21 @@ export default function ProjectsPage() {
                   transition={{ delay: 0.3 + i * 0.06, duration: 0.6 }}
                 />
               </div>
+
+              {/* GitHub link */}
+              {project.url && (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.githubLink}
+                  onClick={(e) => e.stopPropagation()}
+                  id={`mission-github-${project.name.toLowerCase().replace(/[^a-z0-9]/g, "-")}`}
+                >
+                  <FaGithub className={styles.githubIcon} />
+                  <span>VIEW ON GITHUB</span>
+                </a>
+              )}
 
               {/* Hover glow border */}
               <motion.div

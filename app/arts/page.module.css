@@ -73,16 +73,21 @@
 }
 
 /* ─── ART CARD ──────────────────────────────────────────────────────────── */
+.artCardWrapper {
+  position: relative;
+}
+
 .artCard {
+  display: block;
   position: relative;
   background: rgba(5, 15, 32, 0.75);
-  border: 1px solid rgba(var(--accent, 0, 161, 241), 0.15);
+  border: 1px solid rgba(0, 161, 241, 0.12);
   clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
   overflow: hidden;
   cursor: pointer;
   backdrop-filter: blur(8px);
-  display: flex;
-  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Thumbnail */
@@ -142,6 +147,24 @@
   z-index: 4;
 }
 
+/* VIEW label on hover */
+.viewLabel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 0.25em;
+  padding: 6px 18px;
+  border: 1px solid;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  background: rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
 /* Info */
 .info {
   padding: 14px 16px 16px;
@@ -161,6 +184,14 @@
   font-size: 12px;
   color: rgba(240, 240, 240, 0.5);
   line-height: 1.5;
+}
+
+.yearTag {
+  font-family: var(--font-display);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: rgba(0, 161, 241, 0.45);
+  margin-top: 2px;
 }
 
 /* Glow border */

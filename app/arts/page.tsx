@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
+import Link from "next/link";
 import { arts } from "@/data/arts";
 import styles from "./page.module.css";
 
@@ -78,70 +79,94 @@ export default function ArtsPage() {
           const isHovered = hovered === piece.id;
 
           return (
-            <motion.article
+            <motion.div
               key={piece.id}
               variants={itemVar}
-              className={styles.artCard}
+              className={styles.artCardWrapper}
               onMouseEnter={() => setHovered(piece.id)}
               onMouseLeave={() => setHovered(null)}
               whileHover={{ scale: 1.02, y: -4 }}
               transition={{ type: "spring", stiffness: 350, damping: 22 }}
-              id={`art-${piece.id}`}
-              style={{ "--accent": accentColor } as React.CSSProperties}
             >
-              {/* ─ Thumbnail area ─ */}
-              <div className={styles.thumb}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={piece.imageUrl}
-                  alt={piece.title}
-                  className={styles.thumbImg}
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = "none";
-                  }}
-                />
-                {/* Placeholder if image missing */}
-                <div className={styles.thumbPlaceholder}>
-                  <span className={styles.thumbIcon}>◈</span>
+              <Link
+                href={`/arts/${piece.id}`}
+                className={styles.artCard}
+                id={`art-${piece.id}`}
+                style={{ "--accent": accentColor } as React.CSSProperties}
+              >
+                {/* ─ Thumbnail area ─ */}
+                <div className={styles.thumb}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={piece.imageUrl}
+                    alt={piece.title}
+                    className={styles.thumbImg}
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).style.display = "none";
+                    }}
+                  />
+                  {/* Placeholder if image missing */}
+                  <div className={styles.thumbPlaceholder}>
+                    <span className={styles.thumbIcon}>◈</span>
+                  </div>
+
+                  {/* Cut-in overlay on hover */}
+                  <AnimatePresence>
+                    {isHovered && (
+                      <motion.div
+                        className={styles.cutInOverlay}
+                        initial={{ opacity: 0, scale: 1.08 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                        style={{ borderColor: accentColor }}
+                      />
+                    )}
+                  </AnimatePresence>
+
+                  {/* Category badge */}
+                  <span
+                    className={styles.categoryBadge}
+                    style={{ background: accentColor }}
+                  >
+                    {piece.category}
+                  </span>
+
+                  {/* View label on hover */}
+                  <AnimatePresence>
+                    {isHovered && (
+                      <motion.span
+                        className={styles.viewLabel}
+                        initial={{ opacity: 0, y: 6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        style={{ borderColor: accentColor, color: accentColor }}
+                      >
+                        VIEW ›
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
                 </div>
 
-                {/* Cut-in overlay on hover */}
-                <AnimatePresence>
-                  {isHovered && (
-                    <motion.div
-                      className={styles.cutInOverlay}
-                      initial={{ opacity: 0, scale: 1.08 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.25 }}
-                      style={{ borderColor: accentColor }}
-                    />
+                {/* ─ Info area ─ */}
+                <div className={styles.info}>
+                  <h2 className={styles.artTitle}>{piece.title}</h2>
+                  <p className={styles.artDesc}>{piece.description}</p>
+                  {piece.year && (
+                    <span className={styles.yearTag}>{piece.year}</span>
                   )}
-                </AnimatePresence>
+                </div>
 
-                {/* Category badge */}
-                <span
-                  className={styles.categoryBadge}
-                  style={{ background: accentColor }}
-                >
-                  {piece.category}
-                </span>
-              </div>
-
-              {/* ─ Info area ─ */}
-              <div className={styles.info}>
-                <h2 className={styles.artTitle}>{piece.title}</h2>
-                <p className={styles.artDesc}>{piece.description}</p>
-              </div>
-
-              {/* Hover border glow */}
-              <motion.div
-                className={styles.cardGlow}
-                animate={{ opacity: isHovered ? 1 : 0 }}
-                style={{ borderColor: accentColor, boxShadow: `0 0 24px ${accentColor}55` }}
-                transition={{ duration: 0.2 }}
-              />
-            </motion.article>
+                {/* Hover border glow */}
+                <motion.div
+                  className={styles.cardGlow}
+                  animate={{ opacity: isHovered ? 1 : 0 }}
+                  style={{ borderColor: accentColor, boxShadow: `0 0 24px ${accentColor}55` }}
+                  transition={{ duration: 0.2 }}
+                />
+              </Link>
+            </motion.div>
           );
         })}
 
