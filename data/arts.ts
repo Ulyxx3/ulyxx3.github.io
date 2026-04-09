@@ -23,7 +23,7 @@ export const arts: ArtPiece[] = [
     description: "School Project in the BUT MMI first year",
     longDescription:
       "A collection of 2D animation projects produced during the first year of the BUT MMI programme. Covers motion design fundamentals, frame-by-frame animation, and digital storytelling.",
-    imageUrl: "/arts/placeholder-01.jpg",
+    imageUrl: "https://i.ytimg.com/vi/_ZD-fT-YSIE/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARh_IBMoEzAP&rs=AOn4CLDTfIW53ZbfrFau59OeQmKxY_xJ2w",
     tags: ["After Effects", "Premiere", "Illustrator"],
     year: "2024",
   },
@@ -34,7 +34,7 @@ export const arts: ArtPiece[] = [
     description: "School Project for my first year of License in Art Plastiques",
     longDescription:
       "Experimental animation works created during the first year of the Licence Art Plastiques. Explores mixed media techniques combining traditional drawing and digital compositing.",
-    imageUrl: "/arts/placeholder-02.jpg",
+    imageUrl: "https://i.ytimg.com/an_webp/7kaqRD_RNAw/mqdefault_6s.webp?du=3000&sqp=CKyj3c4G&rs=AOn4CLAr8nj6BkJCw6qnY6OQMZdbHVLH5g",
     tags: ["Procreate", "After Effects"],
     year: "2023",
   },
