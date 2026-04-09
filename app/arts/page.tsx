@@ -41,11 +41,10 @@ export default function ArtsPage() {
         transition={{ duration: 0.4 }}
       >
         <span className={styles.pageTag}>SECTION 03</span>
-        <h1 className={styles.pageTitle}>ARTS & ANIMATION ARCHIVE</h1>
+        <h1 className={styles.pageTitle}>DESSINS, ANIMATIONS, AUDIOVISUEL</h1>
         <div className={styles.titleUnderline} />
         <p className={styles.pageDesc}>
-          Visual works compendium — Edit{" "}
-          <code className={styles.code}>data/arts.ts</code> to add your pieces
+          Compendium d&apos;œuvres visuelles
         </p>
       </motion.div>
 
@@ -170,12 +169,6 @@ export default function ArtsPage() {
           );
         })}
 
-        {/* ── ADD NEW placeholder card ── */}
-        <motion.div variants={itemVar} className={styles.addCard}>
-          <span className={styles.addIcon}>+</span>
-          <span className={styles.addLabel}>Add new piece</span>
-          <span className={styles.addHint}>Edit data/arts.ts</span>
-        </motion.div>
       </motion.div>
     </div>
   );

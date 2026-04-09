@@ -36,7 +36,7 @@ export default function AboutPage() {
         transition={{ duration: 0.4 }}
       >
         <span className={styles.pageTag}>SECTION 01</span>
-        <h1 className={styles.pageTitle}>OPERATOR PROFILE</h1>
+        <h1 className={styles.pageTitle}>PROFIL PERSONNEL</h1>
         <div className={styles.titleUnderline} />
       </motion.div>
 
@@ -49,7 +49,7 @@ export default function AboutPage() {
         {/* ── BIO CARD ── */}
         <motion.div variants={item} className={styles.bioCard}>
           <div className={styles.cardHeader}>
-            <span className={styles.cardLabel}>PERSONNEL FILE</span>
+            <span className={styles.cardLabel}>DOSSIER PERSONNEL</span>
             <span className={styles.cardDivider} />
             <span className={styles.cardId}>ID: ULX-003</span>
           </div>
@@ -67,19 +67,19 @@ export default function AboutPage() {
           </p>
           <div className={styles.bioStatus}>
             <div className={styles.statusRow}>
-              <span className={styles.statusKey}>STATUS</span>
+              <span className={styles.statusKey}>STATUT</span>
               <span className={`${styles.statusVal} ${styles.statusActive}`}>
                 <span className={styles.statusDot} />
-                ACTIVE
+                ACTIF
               </span>
             </div>
             <div className={styles.statusRow}>
-              <span className={styles.statusKey}>CLEARANCE</span>
-              <span className={styles.statusVal}>FULL ACCESS</span>
+              <span className={styles.statusKey}>ACCRÉDITATION</span>
+              <span className={styles.statusVal}>ACCÈS TOTAL</span>
             </div>
             <div className={styles.statusRow}>
-              <span className={styles.statusKey}>AVAILABILITY</span>
-              <span className={styles.statusVal}>IMMEDIATE</span>
+              <span className={styles.statusKey}>DISPONIBILITÉ</span>
+              <span className={styles.statusVal}>IMMÉDIATE</span>
             </div>
           </div>
         </motion.div>
@@ -87,7 +87,7 @@ export default function AboutPage() {
         {/* ── STATS PANEL ── */}
         <motion.div variants={item} className={styles.statsPanel}>
           <div className={styles.cardHeader}>
-            <span className={styles.cardLabel}>SKILL PARAMETERS</span>
+            <span className={styles.cardLabel}>PARAMÈTRES DES COMPÉTENCES</span>
             <span className={styles.cardDivider} />
           </div>
           <div className={styles.statsList}>
@@ -115,27 +115,27 @@ export default function AboutPage() {
         {/* ── TIMELINE ── */}
         <motion.div variants={item} className={styles.timelineCard}>
           <div className={styles.cardHeader}>
-            <span className={styles.cardLabel}>OPERATOR TIMELINE</span>
+            <span className={styles.cardLabel}>CHRONOLOGIE DU PROFIL</span>
             <span className={styles.cardDivider} />
           </div>
           <div className={styles.timeline}>
             {[
               {
                 year: "2023",
-                title: "Discord Bot Development",
-                desc: "First ventures into programming via Discord bots.",
+                title: "Développement de bots Discord",
+                desc: "Premiers pas dans la programmation via les bots Discord.",
                 current: false,
               },
               {
                 year: "2024",
-                title: "Web Foundations",
-                desc: "HTML, CSS — the building blocks of the web.",
+                title: "Bases du Web",
+                desc: "HTML, CSS — les piliers du web.",
                 current: false,
               },
               {
                 year: "2025",
-                title: "Advanced Web Dev",
-                desc: "React, JavaScript — interactive, component-driven UIs.",
+                title: "Dév. Web Avancé",
+                desc: "React, JavaScript — interfaces interactives et basées sur des composants.",
                 current: false,
               },
               {

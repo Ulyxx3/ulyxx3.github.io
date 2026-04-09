@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     "designer",
     "2D animator",
     "game dev",
+    "développeur",
+    "animateur 2D",
+    "créateur de jeux",
     "portfolio",
     "React",
     "Godot",
@@ -52,13 +55,13 @@ export default function RootLayout({
         <ClientLayout>{children}</ClientLayout>
 
         {/* Status bar */}
-        <div className="status-bar" aria-label="System status">
+        <div className="status-bar" aria-label="Statut du système">
           <span>
             <span className="dot" />
-            ACTIVE
+            ACTIF
           </span>
-          <span>CLEARANCE: FULL ACCESS</span>
-          <span>AVAILABILITY: IMMEDIATE</span>
+          <span>ACCRÉDITATION : FULL ACCESS</span>
+          <span>DISPONIBILITÉ : IMMEDIATE</span>
         </div>
       </body>
     </html>

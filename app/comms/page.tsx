@@ -63,10 +63,10 @@ export default function CommsPage() {
         transition={{ duration: 0.4 }}
       >
         <span className={styles.pageTag}>SECTION 04</span>
-        <h1 className={styles.pageTitle}>COMMS — SOCIAL LINKS</h1>
+        <h1 className={styles.pageTitle}>COMMS — RÉSEAUX SOCIAUX</h1>
         <div className={styles.titleUnderline} />
         <p className={styles.pageDesc}>
-          Established channels · {socials.length} links active
+          Canaux établis · {socials.length} liens actifs
         </p>
       </motion.div>
 

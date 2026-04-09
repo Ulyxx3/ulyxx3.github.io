@@ -33,7 +33,7 @@ export default function ArtDetailClient({ piece, prev, next }: Props) {
       >
         <Link href="/arts" className={styles.backBtn} id="art-detail-back">
           <span className={styles.backArrow}>‹</span>
-          ARTS ARCHIVE
+          ART & AUDIOVISUEL
         </Link>
 
         <span
@@ -81,9 +81,9 @@ export default function ArtDetailClient({ piece, prev, next }: Props) {
         {/* Placeholder overlay (shown when image fails) */}
         <div className={styles.placeholder}>
           <span className={styles.placeholderIcon}>◈</span>
-          <span className={styles.placeholderText}>IMAGE NOT SET</span>
+          <span className={styles.placeholderText}>IMAGE NON DÉFINIE</span>
           <span className={styles.placeholderHint}>
-            Edit <code>data/arts.ts</code> → imageUrl
+            Modifiez <code>data/arts.ts</code> → imageUrl
           </span>
         </div>
 
@@ -117,7 +117,7 @@ export default function ArtDetailClient({ piece, prev, next }: Props) {
         {/* Tags */}
         {piece.tags && piece.tags.length > 0 && (
           <div className={styles.tags}>
-            <span className={styles.tagsLabel}>TOOLS</span>
+            <span className={styles.tagsLabel}>OUTILS</span>
             <div className={styles.tagsList}>
               {piece.tags.map((tag) => (
                 <span
@@ -148,7 +148,7 @@ export default function ArtDetailClient({ piece, prev, next }: Props) {
           >
             <span className={styles.navArrow}>‹</span>
             <span className={styles.navInfo}>
-              <span className={styles.navHint}>PREVIOUS</span>
+              <span className={styles.navHint}>PRÉCÉDENT</span>
               <span className={styles.navName}>{prev.title}</span>
             </span>
           </Link>
@@ -163,7 +163,7 @@ export default function ArtDetailClient({ piece, prev, next }: Props) {
             id="art-detail-next"
           >
             <span className={styles.navInfo}>
-              <span className={styles.navHint}>NEXT</span>
+              <span className={styles.navHint}>SUIVANT</span>
               <span className={styles.navName}>{next.title}</span>
             </span>
             <span className={styles.navArrow}>›</span>

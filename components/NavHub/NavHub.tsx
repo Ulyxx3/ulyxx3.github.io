@@ -15,11 +15,11 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { id: "home", label: "HOME", sublabel: "Main Terminal", href: "/", index: 0 },
-  { id: "about", label: "OPERATOR", sublabel: "Profile", href: "/about", index: 1 },
-  { id: "projects", label: "MISSION", sublabel: "Archive", href: "/projects", index: 2 },
-  { id: "arts", label: "ARTS &", sublabel: "Animation", href: "/arts", index: 3 },
-  { id: "comms", label: "COMMS", sublabel: "Socials", href: "/comms", index: 4 },
+  { id: "home", label: "ACCUEIL", sublabel: "Terminal Principal", href: "/", index: 0 },
+  { id: "about", label: "PROFIL", sublabel: "Profil", href: "/about", index: 1 },
+  { id: "projects", label: "DÉVELOPPEMENT", sublabel: "Archive", href: "/projects", index: 2 },
+  { id: "arts", label: "ART & AUDIOVISUEL", sublabel: "Animation & Vidéo", href: "/arts", index: 3 },
+  { id: "comms", label: "COMMS", sublabel: "Réseaux", href: "/comms", index: 4 },
 ];
 
 export default function NavHub() {
@@ -101,9 +101,9 @@ export default function NavHub() {
       <div className={styles.keyHint} aria-hidden="true">
         <kbd className={styles.key}>↑</kbd>
         <kbd className={styles.key}>↓</kbd>
-        <span>Navigate</span>
+        <span>Naviguer</span>
         <kbd className={styles.key}>↵</kbd>
-        <span>Select</span>
+        <span>Sélect.</span>
       </div>
     </nav>
   );

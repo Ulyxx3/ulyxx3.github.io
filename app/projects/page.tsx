@@ -36,10 +36,10 @@ export default function ProjectsPage() {
         transition={{ duration: 0.4 }}
       >
         <span className={styles.pageTag}>SECTION 02</span>
-        <h1 className={styles.pageTitle}>MISSION ARCHIVE</h1>
+        <h1 className={styles.pageTitle}>PROJETS DE DÉVELOPPEMENT</h1>
         <div className={styles.titleUnderline} />
         <p className={styles.pageDesc}>
-          {projects.length} missions logged · Select a file to deploy
+          {projects.length} projets enregistrés · Sélectionnez un fichier à déployer
         </p>
       </motion.div>
 
@@ -131,7 +131,7 @@ export default function ProjectsPage() {
                   id={`mission-github-${project.name.toLowerCase().replace(/[^a-z0-9]/g, "-")}`}
                 >
                   <FaGithub className={styles.githubIcon} />
-                  <span>VIEW ON GITHUB</span>
+                  <span>VOIR SUR GITHUB</span>
                 </a>
               )}
 

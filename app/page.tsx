@@ -42,13 +42,13 @@ export default function HomePage() {
         {/* Top eyebrow */}
         <motion.div variants={itemVariants} className={styles.eyebrow}>
           <span className={styles.eyebrowLine} />
-          <span>SYSTEM ONLINE</span>
+          <span>SYSTÈME EN LIGNE</span>
           <span className={styles.eyebrowLine} />
         </motion.div>
 
         {/* Main title */}
         <motion.h1 variants={itemVariants} className={styles.title}>
-          <span className={styles.titleSub}>OPERATOR</span>
+          <span className={styles.titleSub}>ULYSSE SOUCARET</span>
           <span className={styles.titleMain}>ULYXX3</span>
           <span className={styles.titleAccent}>PORTFOLIO</span>
         </motion.h1>
@@ -63,20 +63,20 @@ export default function HomePage() {
         <motion.div variants={itemVariants} className={styles.badges}>
           <span className={styles.badge} data-status="active">
             <span className={styles.badgeDot} />
-            ACTIVE
+            ACTIF
           </span>
-          <span className={styles.badge}>FULL ACCESS</span>
-          <span className={styles.badge}>IMMEDIATE</span>
+          <span className={styles.badge}>ACCÈS TOTAL</span>
+          <span className={styles.badge}>IMMÉDIAT</span>
         </motion.div>
 
         {/* CTA */}
         <motion.div variants={itemVariants} className={styles.cta}>
           <Link href="/projects" className={styles.ctaBtn} id="home-cta-missions">
             <span className={styles.ctaBtnIcon}>▶</span>
-            MISSION ARCHIVE
+            PROJETS DE DÉVELOPPEMENT
           </Link>
           <Link href="/about" className={styles.ctaBtnSecondary} id="home-cta-profile">
-            OPERATOR PROFILE
+            VOIR LE PROFIL
           </Link>
         </motion.div>
       </motion.section>
@@ -121,12 +121,12 @@ export default function HomePage() {
         transition={{ delay: 0.8, duration: 0.5 }}
         aria-label="Timeline"
       >
-        <div className={styles.timelineHeader}>OPERATOR TIMELINE</div>
+        <div className={styles.timelineHeader}>CHRONOLOGIE DU PROFIL</div>
         <div className={styles.timelineItems}>
           {[
-            { year: "2023", label: "Discord Bot Development" },
-            { year: "2024", label: "Web Foundations — HTML/CSS" },
-            { year: "2025", label: "Advanced Web — React/JS" },
+            { year: "2023", label: "Développement de bots Discord" },
+            { year: "2024", label: "Bases du Web — HTML/CSS" },
+            { year: "2025", label: "Web Avancé — React/JS" },
             {
               year: "2026",
               label: "App Dev · Shader Dev · Game Dev",
