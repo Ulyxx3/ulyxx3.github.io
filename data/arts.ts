@@ -1,4 +1,4 @@
-export type ArtCategory = "Drawing" | "2D Animation" | "Motion Graphics";
+export type ArtCategory = "Drawing" | "2D Animation" | "Motion Graphics" | "Montage";
 
 export interface ArtPiece {
   id: string;
@@ -24,7 +24,7 @@ export const arts: ArtPiece[] = [
     longDescription:
       "A collection of 2D animation projects produced during the first year of the BUT MMI programme. Covers motion design fundamentals, frame-by-frame animation, and digital storytelling.",
     imageUrl: "https://i.ytimg.com/vi/_ZD-fT-YSIE/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARh_IBMoEzAP&rs=AOn4CLDTfIW53ZbfrFau59OeQmKxY_xJ2w",
-    tags: ["After Effects", "Premiere", "Illustrator"],
+    tags: ["Clip Studio Paint"],
     year: "2024",
   },
   {
@@ -35,29 +35,29 @@ export const arts: ArtPiece[] = [
     longDescription:
       "Experimental animation works created during the first year of the Licence Art Plastiques. Explores mixed media techniques combining traditional drawing and digital compositing.",
     imageUrl: "https://i.ytimg.com/an_webp/7kaqRD_RNAw/mqdefault_6s.webp?du=3000&sqp=CKyj3c4G&rs=AOn4CLAr8nj6BkJCw6qnY6OQMZdbHVLH5g",
-    tags: ["Procreate", "After Effects"],
+    tags: ["Adobe Animate", "After Effects"],
     year: "2023",
   },
   {
     id: "art-03",
-    title: "Animation Perso",
-    category: "2D Animation",
-    description: "Personal Animation Projects",
+    title: "L1 - Video Dystopie",
+    category: "Montage",
+    description: "School Project for my first year of License in Art Plastiques",
     longDescription:
-      "A growing collection of personal animation experiments — character rigs, loops, and short sequences created outside of school constraints.",
-    imageUrl: "/arts/placeholder-03.jpg",
-    tags: ["Procreate", "DaVinci Resolve"],
+      "Vidéo dystopique sur le thème de la surveillance de masse.",
+    imageUrl: "https://i.ytimg.com/an_webp/4luvSpc8-rc/mqdefault_6s.webp?du=3000&sqp=CPOz3c4G&rs=AOn4CLCOonjPQsQJKeS0ghknmn5pnYnzUw",
+    tags: ["Premiere", "After Effects"],
     year: "2025",
   },
   {
     id: "art-04",
-    title: "OPERATOR SKETCH",
+    title: "L'espace et le Temps",
     category: "Drawing",
-    description: "Concept sketch for a tactical operator character.",
+    description: "Concours des Beaux Arts d'Aix",
     longDescription:
-      "Character concept art for a tactical operator design. Explores silhouette, gear details and posing for a game-ready character archetype.",
-    imageUrl: "/arts/placeholder-04.jpg",
-    tags: ["Procreate", "Digital Ink"],
+      "Concours des Beaux Arts d'Aix sur le sujet l'espace et le temps.",
+    imageUrl: "https://i.ytimg.com/an_webp/aa9eG3QiZ28/mqdefault_6s.webp?du=3000&sqp=CMOh3c4G&rs=AOn4CLDghSa_KtQiVg55Gf2wTavy0sOfrw",
+    tags: ["Animate", "After Effects"],
     year: "2025",
   },
 ];
