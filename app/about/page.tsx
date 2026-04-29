@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import Image from "next/image";
 import styles from "./page.module.css";
 
 const EASE: [number, number, number, number] = [0.87, 0, 0.13, 1];
@@ -54,7 +55,14 @@ export default function AboutPage() {
             <span className={styles.cardId}>ID: ULX-003</span>
           </div>
           <div className={styles.bioAvatar}>
-            <span className={styles.avatarInitial}>U</span>
+            <Image
+              src="/profile.jpeg"
+              alt="ULYXX3 Profile"
+              width={200}
+              height={200}
+              className={styles.avatarImage}
+              priority
+            />
             <div className={styles.avatarRing} />
             <div className={styles.avatarRing2} />
           </div>

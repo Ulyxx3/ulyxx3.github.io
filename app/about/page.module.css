@@ -89,20 +89,20 @@
 /* Avatar */
 .bioAvatar {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 8px 0;
 }
 
-.avatarInitial {
-  font-family: var(--font-display);
-  font-size: 52px;
-  color: var(--p3-blue);
+.avatarImage {
+  border-radius: 50%;
+  object-fit: cover;
   z-index: 1;
-  text-shadow: 0 0 30px var(--p3-blue-glow);
+  border: 1px solid rgba(0, 161, 241, 0.3);
+  box-shadow: 0 0 20px rgba(0, 161, 241, 0.2);
 }
 
 .avatarRing {
